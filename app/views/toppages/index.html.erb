@@ -1,0 +1,15 @@
+<% if logged_in? %>
+  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+    <div class="col-sm-8">
+      <%= render 'tasks/tasks', tasks: @tasks %>
+    </div>
+<% else %>
+
+<div class="center jumbotron">
+  <div class="text-center">
+    <h1>タスク管理ツール　ログイン画面</h1>
+    <%= link_to 'Sign up', signup_path, class: 'btn btn-lg btn-primary' %>
+  </div>
+</div>
+
+<% end %>
